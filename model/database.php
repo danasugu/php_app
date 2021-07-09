@@ -6,7 +6,9 @@ $username = 'root';
 $password = '';
 
 try{
-  $db = newPDO()
+  $db = new PDO($dsn, $username, $password);
+} catch (PDOException $e) {
+  $error = "Database Error"
 }
 
 ?>
