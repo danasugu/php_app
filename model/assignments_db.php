@@ -10,7 +10,7 @@
     }
     $statement = $db->prepare($query);
     $statement->bindValue(':course_id', $course_id);
-    $statement = $statement->fetchAll();
+    $assignments = $statement->fetchAll();
     $statement->closeCursor();
     return $assignments;
 
