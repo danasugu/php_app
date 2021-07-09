@@ -25,3 +25,13 @@
     $statement->closeCursor();
 
   }
+
+    function add_assignment($course_id, $description) {
+    global $db;
+    $query = 'INSERT INTO assignments (Description, courseID) VALUES(:descr, :courseID)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':assign_id', $assignment_id);
+    $statement->execute();
+    $statement->closeCursor();
+
+  }
