@@ -31,7 +31,7 @@
     $query = 'INSERT INTO assignments (Description, courseID) VALUES(:descr, :courseID)';
     $statement = $db->prepare($query);
     $statement->bindValue(':descr', $description);
-     $statement->bindValue(':courseID', $course_id);
+    $statement->bindValue(':courseID', $course_id);
     $statement->execute();
     $statement->closeCursor();
 
