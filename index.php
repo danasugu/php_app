@@ -40,3 +40,16 @@
                 exit();
             }
             break;
+
+             case "delete_course":
+            if ($course_id) {
+                try {
+                    delete_course($course_id);
+                } catch (PDOException $e) {
+                    $error = "You cannot delete a course if assignments exist for it.";
+                    include('view/error.php');
+                    exit();
+                }
+                header("Location: .?action=list_courses");
+            }
+            break;
