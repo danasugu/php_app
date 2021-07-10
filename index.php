@@ -53,3 +53,12 @@
                 header("Location: .?action=list_courses");
             }
             break;
+            case "delete_assignment":
+            if ($assignment_id) {
+                delete_assignment($assignment_id);
+                header("Location: .?course_id=$course_id");
+            } else {
+                $error = "Missing or incorrect assignment id.";
+                include('view/error.php');
+            }
+            break;
