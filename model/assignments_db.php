@@ -23,7 +23,6 @@
     $statement->bindValue(':assign_id', $assignment_id);
     $statement->execute();
     $statement->closeCursor();
-
   }
 
     function add_assignment($course_id, $description) {
@@ -34,5 +33,4 @@
     $statement->bindValue(':courseID', $course_id);
     $statement->execute();
     $statement->closeCursor();
-
   }
