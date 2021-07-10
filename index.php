@@ -41,7 +41,7 @@
             }
             break;
 
-             case "delete_course":
+            case "delete_course":
             if ($course_id) {
                 try {
                     delete_course($course_id);
