@@ -20,3 +20,23 @@
             $action = 'list_assignments'; // assigning default value if NULL or FALSE
         }
     }
+
+     switch($action) {
+        case "list_courses": 
+            $courses = get_courses();
+            include('view/course_list.php');
+            break;
+        case "add_course":
+            add_course($course_name);
+            header("Location: .?action=list_courses");
+            break;
+        case "add_assignment":
+            if ($course_id && $description) {
+                add_assignment($course_id, $description);
+                header("Location: .?course_id=$course_id");
+            } else {
+                $error = "Invalid assignment data. Check all fields and try again.";
+                include('view/error.php');
+                exit();
+            }
+            break;
